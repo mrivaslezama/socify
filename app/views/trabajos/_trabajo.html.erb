@@ -1,7 +1,11 @@
 <div id="<%= dom_id trabajo %>">
   <div>
     <strong>Image</strong>
-    <%= link_to image_tag(trabajo) %>
+    <% if trabajo.image.attached? %>
+      <%= image_tag(trabajo.image, style: 'width: 200px;')  %>
+    <% end %>
+  
+
   </div>
   <p>
     <strong>Titulo:</strong>
